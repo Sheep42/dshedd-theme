@@ -1,0 +1,25 @@
+// _form.scss
+
+a.button,
+button,
+button[type="button"],
+button[type="submit"],
+input[type="submit"],
+input[type="button"] {
+	-webkit-appearance: none;
+	&:hover,
+	&:active {
+		
+	}
+}
+
+textarea {
+	-webkit-appearance: none;
+	&:focus, &:active {
+
+	}
+}
+
+input[type="text"] {
+
+}
