@@ -2,9 +2,9 @@
 
 function cleantheme_init() {
 
-	// Example simple post type registration
-	// cleantheme_register_post_type( 'Book', 'Books', 'book', 5, 'book-listing' );
-
+	// remove editor from pages
+	remove_post_type_support('page', 'editor');
+	
 }
 add_action( 'init', 'cleantheme_init' );
 
@@ -58,6 +58,8 @@ function cleantheme_setup() {
 	) );
 
 	cleantheme_front_page_template( 'front-page.php' );
+
+	cleantheme_register_post_type( 'Project', 'Projects', 'project', 5, 'projects' );
 
 }
 add_action( 'after_setup_theme', 'cleantheme_setup' );
@@ -146,7 +148,8 @@ function cleantheme_register_post_type(
 function cleantheme_google_fonts_url() {
 	$fonts_url = '';
 	$font_families = array(
-		'Open Sans:300,300i,400,400i,600,600i,800,800i',
+		'Roboto Mono: 400',
+		'Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700',
 	);
 
 	$query_args = array(
