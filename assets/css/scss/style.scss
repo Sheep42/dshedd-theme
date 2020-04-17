@@ -36,7 +36,7 @@ $theme: "/wp-content/themes/dshedd";
 @import "base/forms";
 
 // 3rd Party 
-// @import "vendor/bootstrap/bootstrap";
+@import "vendor/bootstrap/bootstrap";
 
 // Content
 @import "content/archive";
