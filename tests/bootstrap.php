@@ -19,6 +19,8 @@ if ( ! file_exists( $_tests_dir . '/includes/functions.php' ) ) {
 // Give access to tests_add_filter() function.
 require_once $_tests_dir . '/includes/functions.php';
 
+define( 'WP_TESTS_DIR', $_tests_dir );
+
 /**
  * Registers theme
  */
@@ -40,9 +42,9 @@ function _register_theme() {
 	add_filter( 'pre_option_stylesheet', function() use ( $current_theme ) {
 		return $current_theme;
 	});
+
 }
 tests_add_filter( 'muplugins_loaded', '_register_theme' );
-
 
 // Start up the WP testing environment.
 require $_tests_dir . '/includes/bootstrap.php';
