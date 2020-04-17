@@ -24,9 +24,9 @@ get_header(); ?>
 			endwhile;
 
 			// the_posts_pagination( array(
-			// 	'prev_text' => cleantheme_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'cleantheme' ) . '</span>',
-			// 	'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'cleantheme' ) . '</span>' . cleantheme_get_svg( array( 'icon' => 'arrow-right' ) ),
-			// 	'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'cleantheme' ) . ' </span>',
+			// 	'prev_text' => dshedd_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'dshedd' ) . '</span>',
+			// 	'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'dshedd' ) . '</span>' . dshedd_get_svg( array( 'icon' => 'arrow-right' ) ),
+			// 	'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'dshedd' ) . ' </span>',
 			// ) );
 
 		else :

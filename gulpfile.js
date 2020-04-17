@@ -184,7 +184,7 @@ function watch() {
     if( true === argv.browserSync ) { 
         browserSync.init({
             files: ['template-parts/**/*.php', '*.php'],
-            proxy: "clean-theme.local",
+            proxy: "dshedd.local",
             snippetOptions: {
               whitelist: ['/wp-admin/admin-ajax.php'],
               blacklist: ['/wp-admin/**']

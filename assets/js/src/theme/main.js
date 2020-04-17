@@ -7,7 +7,7 @@
 		$navMenuItem = $navigation.find( '.menu-item' ),
 		$menuToggle = $navigation.find( '.menu-toggle' ),
 		$entryContent = $body.find( '.entry-content' ),
-		isFrontPage = $body.hasClass( 'cleantheme-front-page' ) || $body.hasClass( 'home blog' );
+		isFrontPage = $body.hasClass( 'dshedd-front-page' ) || $body.hasClass( 'home blog' );
 
 	/**
 	 * Test if an iOS device.

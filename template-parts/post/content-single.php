@@ -17,7 +17,7 @@
 	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'cleantheme-featured-image' ); ?>
+				<?php the_post_thumbnail( 'dshedd-featured-image' ); ?>
 			</a>
 		</div><!-- .post-thumbnail -->
 	<?php endif; ?>
@@ -27,7 +27,7 @@
 			the_content();
 
 			// wp_link_pages( array(
-			// 	'before'      => '<div class="page-links">' . __( 'Pages:', 'cleantheme' ),
+			// 	'before'      => '<div class="page-links">' . __( 'Pages:', 'dshedd' ),
 			// 	'after'       => '</div>',
 			// 	'link_before' => '<span class="page-number">',
 			// 	'link_after'  => '</span>',

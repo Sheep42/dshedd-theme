@@ -18,7 +18,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'cleantheme' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'dshedd' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 

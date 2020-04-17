@@ -37,7 +37,7 @@ The goal of this theme is to provide an easy to understand and easy to use boile
 **WordPress**: 5.3.2
 
 ### Installing
-Start by cloning the theme into your local WordPress instance under `wp-content/themes/clean-theme`
+Start by cloning the theme into your local WordPress instance under `wp-content/themes/dshedd`
 
 If you do not have nodejs installed, you will need to install it. You can find the latest stable version of node here: [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 
@@ -169,7 +169,7 @@ The theme uses [gulp 4](https://gulpjs.com/) as the core build system, because g
 #### Browser-Sync
 Browser-sync is included and enabled by default. If you are unaware, browser-sync is a tool which will watch specified files and automatically reload your browser when changes are made. To make it work, you'll need to open up the theme's `gulpfile.js` and modify the `watch` task.
 
-Inside of the `browserSync.init()` options, you'll need to modify the line that reads `proxy: "clean-theme.local"` to reflect your local environment's url. You'll also want to update the line that reads `files: ['template-parts/**/*.php', '*.php']`  to include any additional file paths that you would like to watch for changes.
+Inside of the `browserSync.init()` options, you'll need to modify the line that reads `proxy: "dshedd.local"` to reflect your local environment's url. You'll also want to update the line that reads `files: ['template-parts/**/*.php', '*.php']`  to include any additional file paths that you would like to watch for changes.
 
 #### I don't want to use browser-sync
 
@@ -258,19 +258,19 @@ This theme takes advantage of WordPress' asset caching with some help from the b
 
 The build system generates a file called `asset_cache_manifest.json` in the theme root. This file contains json mapping final built asset files to a sha256 value created by hashing the file contents.
 
-You can retrieve the value from this file in the theme by calling `_cleantheme_get_cache_version( $filename )` where `$filename` is the name of the file you need to get a caching value for.
+You can retrieve the value from this file in the theme by calling `_dshedd_get_cache_version( $filename )` where `$filename` is the name of the file you need to get a caching value for.
 
 An example of this system in use ships with the theme to enqueue style.css and main.min.js:
 
 	// Theme base stylesheet.
-	wp_enqueue_style( 'cleantheme-style', get_stylesheet_uri(), array(), _cleantheme_get_cache_version( 'style.css' ) );
+	wp_enqueue_style( 'dshedd-style', get_stylesheet_uri(), array(), _dshedd_get_cache_version( 'style.css' ) );
 
 	// enqueue main.min.js
-	wp_enqueue_script( 'cleantheme-main-scripts', get_theme_file_uri( '/assets/js/build/theme/main.min.js' ), array( 'jquery' ), _cleantheme_get_cache_version( 'main.min.js' ), true ); 
+	wp_enqueue_script( 'dshedd-main-scripts', get_theme_file_uri( '/assets/js/build/theme/main.min.js' ), array( 'jquery' ), _dshedd_get_cache_version( 'main.min.js' ), true ); 
 
 **When WP_DEBUG is set to true, asset caching will always be busted.**
 
-It's worth noting that `_cleantheme_get_cache_version` uses wp_cache_set / wp_cache_get to avoid reading the manifest file multiple times in a row within the same page load. 
+It's worth noting that `_dshedd_get_cache_version` uses wp_cache_set / wp_cache_get to avoid reading the manifest file multiple times in a row within the same page load. 
 
 # Convenience & Utility 
 
@@ -279,21 +279,21 @@ It's worth noting that `_cleantheme_get_cache_version` uses wp_cache_set / wp_ca
 I've left in a small handful of helpful default WordPress theme functions including, but not limited to DNS prefetching and Google font loading. I'll briefly describe each.
 
 ##### DNS Prefetch
-**function:** `cleantheme_resource_hints()`
+**function:** `dshedd_resource_hints()`
 
 This function hooks wp_resource_hints to speed up the loading of external resources by resolving the DNS before the request is made.
 
 Out of the box, this is only prefetching Google fonts. You can utilize this for your other external resources, though by following the same pattern already used.
 
 ##### Google Font Loading
-**function:** `cleantheme_google_fonts_url()`
+**function:** `dshedd_google_fonts_url()`
 
 This function builds out the google fonts url for use in enqueuing the stylesheet. 
 
 Out of the box, this includes Open Sans in the theme. Adding additional font strings to the $font_families array will include those in your project as well. 
 
 ##### Simple Post Type Creation
-**function:** `cleantheme_register_post_type()`
+**function:** `dshedd_register_post_type()`
 
 This is an abstraction to simplify the creation of simple post types. The idea is that if you need to create a post type quickly without too much customization, this will take care of building the labels and setting the options for you. 
 

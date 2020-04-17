@@ -17,7 +17,7 @@ get_header(); ?>
 		</header>
 	<?php else : ?>
 	<header class="page-header">
-		<h2 class="page-title"><?php _e( 'Posts', 'cleantheme' ); ?></h2>
+		<h2 class="page-title"><?php _e( 'Posts', 'dshedd' ); ?></h2>
 	</header>
 	<?php endif; ?>
 
@@ -40,9 +40,9 @@ get_header(); ?>
 				endwhile;
 
 				the_posts_pagination( array(
-					'prev_text' => '<span class="screen-reader-text">' . __( 'Previous page', 'cleantheme' ) . '</span>',
-					'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'cleantheme' ) . '</span>',
-					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'cleantheme' ) . ' </span>',
+					'prev_text' => '<span class="screen-reader-text">' . __( 'Previous page', 'dshedd' ) . '</span>',
+					'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'dshedd' ) . '</span>',
+					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'dshedd' ) . ' </span>',
 				) );
 
 			else :
