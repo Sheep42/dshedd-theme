@@ -1,2 +1,42 @@
 // _base.scss
 // base structural, non-content related  styles for this theme
+
+body {
+
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+
+	&:before {
+		content: '';
+		width: 100vw;
+		height: 100vh;
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: $color-gray;
+		opacity: 0.95;
+	}
+
+	.terminal-text { 
+
+		position: relative;
+		display: inline-block;
+		font-family: "Roboto Mono", Arial, Helvetica, sans-serif;
+
+		&::after {
+			content: "";
+			position: absolute;
+			display: inline-block;
+			top: 5px;
+			background-color: $color-white;
+			vertical-align: top;
+			-webkit-animation: blink 1s step-end infinite;
+			animation: blink 1s step-end infinite;
+		}
+
+	}
+
+}

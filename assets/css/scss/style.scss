@@ -31,6 +31,7 @@ $theme: "/wp-content/themes/dshedd";
 @import "variables/fonts";
 
 // Base Styles
+@import "base/animations";
 @import "base/base";
 @import "base/general";
 @import "base/forms";

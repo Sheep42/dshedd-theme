@@ -5,6 +5,20 @@ function dshedd_init() {
 	// remove editor from pages
 	remove_post_type_support('page', 'editor');
 	
+	if( function_exists('acf_add_options_page') ) {
+	
+		acf_add_options_page(array(
+			'page_title' 	=> 'Global Options',
+			'menu_title'	=> 'Global Options',
+			'menu_slug' 	=> 'global-content',
+			'capability'	=> 'edit_posts',
+			'icon_url' => 'dashicons-admin-generic', 
+			'position' => 2,
+			'redirect'		=> false
+		));	
+		
+	}
+
 }
 add_action( 'init', 'dshedd_init' );
 
@@ -196,6 +210,28 @@ function dshedd_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'dshedd_widgets_init' );
+
+// Appends the nav-link class to nav menu li tags
+// for bootstrap
+function dshedd_add_nav_item_class( $classes, $item, $args ) {
+ 
+    $classes[] = "nav-item";
+ 
+    return $classes;
+
+}
+add_filter( 'nav_menu_css_class' , 'dshedd_add_nav_item_class' , 10, 4 );
+
+// Appends the nav-link class to nav menu a tags
+// for bootstrap
+function dshedd_add_menu_link_class( $atts, $item, $args ) {
+
+    $atts['class'] = ( empty( $atts['class'] ) ) ? 'nav-link' : $atts['class'] . 'nav-link';
+
+    return $atts;
+
+}
+add_filter( 'nav_menu_link_attributes', 'dshedd_add_menu_link_class', 1, 3 );
 
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and
