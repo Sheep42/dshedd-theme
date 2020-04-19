@@ -32,6 +32,7 @@ class TestThemeFunctions extends WP_UnitTestCase {
 		$sizes = [
 			'dshedd-featured-image',
 			'dshedd-thumbnail-avatar',
+			'dshedd-thumbnail-headshot',
 		];
 
 		foreach( $sizes as $size ) {

@@ -8,7 +8,7 @@
 
 	<?php $header_text = get_field( 'header_text', 'options' ); ?>
 	<?php if( !empty( $header_text ) ): ?>
-		<div class="navbar-brand header-text">
+		<div class="navbar-brand header-text mb-3">
 			<span class="terminal-text"><?php esc_html_e( $header_text ); ?></span>
 		</div>
 	<?php endif; ?>

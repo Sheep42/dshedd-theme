@@ -51,6 +51,7 @@ function dshedd_setup() {
 	// Custom image sizes
 	add_image_size( 'dshedd-featured-image', 2000, 1200, true );
 	add_image_size( 'dshedd-thumbnail-avatar', 100, 100, true );
+	add_image_size( 'dshedd-thumbnail-headshot', 250, 250, true );
 
 	register_nav_menus( array(
 		'top'    => __( 'Top Menu', 'dshedd' ),

@@ -3,7 +3,7 @@
 ?>
 		</div><!-- #content -->
 
-		<footer id="colophon" class="site-footer" role="contentinfo">
+		<footer id="colophon" class="site-footer container text-center" role="contentinfo">
 			<div class="wrap">
 				<?php
 					get_template_part( 'template-parts/footer/footer', 'widgets' );

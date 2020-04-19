@@ -8,6 +8,21 @@ body {
 	background-size: cover;
 	-o-background-size: cover;
 
+	#page {
+
+		position: relative;
+
+
+		.container {
+
+			@include clearfix();
+
+			min-width: 375px;
+
+		}
+
+	}
+
 	&:before {
 		content: '';
 		width: 100vw;
@@ -35,6 +50,27 @@ body {
 			vertical-align: top;
 			-webkit-animation: blink 1s step-end infinite;
 			animation: blink 1s step-end infinite;
+		}
+
+	}
+
+
+	@media( max-width: $break-desktopMedium ) {
+		
+		.entry-summary,
+		.entry-content {
+			width: 75%;
+		}
+
+	}
+
+	@media( min-width: $break-desktopMedium ) {
+
+		.entry-summary,
+		.entry-content {
+
+			width: 50%;
+
 		}
 
 	}

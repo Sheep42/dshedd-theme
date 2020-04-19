@@ -30,14 +30,14 @@ $theme: "/wp-content/themes/dshedd";
 @import "variables/colors";
 @import "variables/fonts";
 
+// 3rd Party 
+@import "vendor/bootstrap/bootstrap";
+
 // Base Styles
 @import "base/animations";
 @import "base/base";
 @import "base/general";
 @import "base/forms";
-
-// 3rd Party 
-@import "vendor/bootstrap/bootstrap";
 
 // Content
 @import "content/archive";

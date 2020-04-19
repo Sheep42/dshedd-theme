@@ -28,12 +28,12 @@
 	}
 
 ?>
-<body <?php body_class('bg-dark text-white container-fluid'); ?> <?php echo $body_style; ?>>
+<body <?php body_class('bg-dark text-white'); ?> <?php echo $body_style; ?>>
 
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'dshedd' ); ?></a>
 
-	<header id="masthead" class="site-header container" role="banner">
+	<header id="masthead" class="site-header container mb-5" role="banner">
 
 		<?php if ( has_nav_menu( 'top' ) ) : ?>
 			<div class="navigation-top">

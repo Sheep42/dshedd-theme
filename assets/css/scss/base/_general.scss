@@ -2,40 +2,39 @@
 // h1-h6 styles, p tags, lists, etc
 
 body {
-	color: $color-black;	
 	font-family: $font-global;
-	font-size: 16px;
-	line-height: 1.5625; // 25 / 16
+	font-size: 18px;
+	line-height: 26px;
 }
 
 h1,
 .h1 {
-	
+	font-family: $font-title;
 }
 
 h2,
 .h2 {
-
+	font-family: $font-title;
 }
 
 h3,
 .h3 {
-
+	font-family: $font-title;
 }
 
 h4,
 .h4 {
-	
+	font-family: $font-title;
 }
 
 h5,
 .h5 {
-
+	font-family: $font-title;
 }
 
 h6,
 .h6 {
-
+	font-family: $font-title;
 }
 strong {
 	font-weight: 700;
@@ -44,12 +43,15 @@ em {
 	font-style: italic;
 }
 a {
-	&:focus {
 
-	}
+	color: $link-color;
+	text-decoration: none;
+
+	&:focus,
 	&:hover,
 	&:active {
-
+		color: $active-link-color;
+		text-decoration: none;
 	}
 }
 ol {
