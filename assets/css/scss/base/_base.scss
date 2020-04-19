@@ -1,17 +1,24 @@
 // _base.scss
 // base structural, non-content related  styles for this theme
 
+html,
+body {
+	height: 100%;
+}
+
 body {
 
+	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
-	background-size: cover;
 	-o-background-size: cover;
+
+	background-attachment: fixed;
 
 	#page {
 
 		position: relative;
-
+		flex: 1 0 auto;
 
 		.container {
 
@@ -21,6 +28,11 @@ body {
 
 		}
 
+	}
+
+	#footer {
+		position: relative;
+		background-color: $color-dark-gray;
 	}
 
 	&:before {
