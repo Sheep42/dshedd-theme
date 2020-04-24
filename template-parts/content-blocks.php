@@ -11,7 +11,7 @@
 
 	 	<?php foreach( $content_blocks as $content_block ): ?>
 
-	 		<div id="content-block-<?php esc_attr_e( $counter ); ?>" class="container p-0 content-block content-block-<?php esc_attr_e( $content_block['acf_fc_layout'] ); ?>">
+	 		<div id="content-block-<?php esc_attr_e( $counter ); ?>" class="content-block content-block-<?php esc_attr_e( $content_block['acf_fc_layout'] ); ?>">
 					<?php 
 						set_query_var( 'content_block', $content_block );
 						get_template_part('template-parts/blocks/block', $content_block['acf_fc_layout']);
