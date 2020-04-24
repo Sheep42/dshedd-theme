@@ -20,7 +20,9 @@ body {
 		position: relative;
 		flex: 1 0 auto;
 
-		.container {
+		.entry-header,
+		.entry-content,
+		.entry-summary {
 
 			@include clearfix();
 
@@ -69,8 +71,7 @@ body {
 
 	@media( max-width: $break-desktopMedium ) {
 		
-		.entry-summary,
-		.entry-content {
+		article {
 			width: 75%;
 		}
 
@@ -78,8 +79,7 @@ body {
 
 	@media( min-width: $break-desktopMedium ) {
 
-		.entry-summary,
-		.entry-content {
+		article {
 
 			width: 50%;
 

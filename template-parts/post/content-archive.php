@@ -5,7 +5,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('mb-5 pb-5 border-bottom border-light container'); ?>>
 
 	<header class="entry-header">
 		<h2 class="entry-title">
@@ -17,7 +17,7 @@
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
-	<div class="entry-summary">
+	<div class="entry-content">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 

@@ -7,42 +7,38 @@ $content_blocks = get_field( 'content_blocks' );
 set_query_var( 'content_blocks', $content_blocks );
 
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+<article id="post-<?php the_ID(); ?>" <?php post_class('container'); ?> >
 
-	<div class="panel-content">
+	<section class="entry-summary mb-5">
 
-		<section class="entry-summary container mb-5">
+		<?php 
+			$photo = get_field( 'photo' );
+			$summary = wp_kses_post( get_field( 'summary_text' ) );
+		?>
 
-			<?php 
-				$photo = get_field( 'photo' );
-				$summary = wp_kses_post( get_field( 'summary_text' ) );
-			?>
+		<?php 
+		
+			echo wp_get_attachment_image( 
+				$photo['ID'], 
+				'dshedd-thumbnail-headshot', 
+				false, 
+				array( 
+					'class' => 'headshot' 
+				) 
+			);
 
-			<?php 
+		?>
+
+		<div class="summary-text">
+			<?php echo apply_filters( 'the_content', $summary ); ?>
+		</div>
+
+	</section><!-- .container -->
+
+	<section class="entry-content mb-5">
+
+		<?php get_template_part( 'template-parts/content', 'blocks' ); ?>
 			
-				echo wp_get_attachment_image( 
-					$photo['ID'], 
-					'dshedd-thumbnail-headshot', 
-					false, 
-					array( 
-						'class' => 'headshot' 
-					) 
-				);
-
-			?>
-
-			<div class="summary-text">
-				<?php echo apply_filters( 'the_content', $summary ); ?>
-			</div>
-
-		</section><!-- .container -->
-
-		<section class="entry-content container mb-5">
-
-			<?php get_template_part( 'template-parts/content', 'blocks' ); ?>
-				
-		</section><!-- .entry-content -->
-
-	</div><!-- .panel-content -->
+	</section><!-- .entry-content -->
 
 </article><!-- #post-## -->

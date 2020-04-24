@@ -40,15 +40,14 @@ $theme: "/wp-content/themes/dshedd";
 @import "base/forms";
 
 // Content
-@import "content/archive";
 @import "content/single";
 @import "content/page";
 @import "content/front-page";
+@import "content/blog";
 // @import "content/new-page-template";
 // @import "content/new-post-type";
 
 // Global
 @import "global/header";
 @import "global/navigation";
-@import "global/sidebar";
 @import "global/footer";

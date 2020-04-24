@@ -5,6 +5,6 @@
 
 	if( !empty( $content_block ) ) {
 
-		echo apply_filters( 'the_content', wp_kses_post( $content_block['content'] ) );
+		echo apply_filters( 'the_content', $content_block['content'] );
 		
 	}
