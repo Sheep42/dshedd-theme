@@ -185,9 +185,20 @@ function dshedd_google_fonts_url() {
 function dshedd_resource_hints( $urls, $relation_type ) {
 
 	if ( wp_style_is( 'dshedd-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
+		
 		$urls[] = array(
 			'href' => 'https://fonts.gstatic.com',
 			'crossorigin',
+		);
+
+		$urls[] = array(
+			'href' => 'https://kit.fontawesome.com',
+			'crossorigin'
+		);
+
+		$urls[] = array(
+			'href' => 'https://kit-free.fontawesome.com',
+			'crossorigin'
 		);
 	}
 
@@ -216,7 +227,7 @@ add_action( 'widgets_init', 'dshedd_widgets_init' );
 // for bootstrap
 function dshedd_add_nav_item_class( $classes, $item, $args ) {
  
-    $classes[] = "nav-item";
+	$classes[] = "nav-item";
  
     return $classes;
 
@@ -400,4 +411,31 @@ function dshedd_doing_ajax() {
 
 function dshedd_doing_cron() {
 	return function_exists('wp_doing_cron') ? wp_doing_cron() : (defined('DOING_CRON') && DOING_CRON);
+}
+
+function dshedd_load_fontawesome() {
+
+	$fontawesome_id = _dshedd_get_fontawesome_id();
+
+	if( false !== $fontawesome_id )
+		echo sprintf( '<script src="https://kit.fontawesome.com/%s.js" crossorigin="anonymous" async></script>', urlencode( trim( $fontawesome_id ) ) );
+
+}
+
+function _dshedd_get_fontawesome_id() {
+
+	$fontawesome_id = wp_cache_get( 'fontawesome_id', 'dshedd', false, $found );
+
+	if( true === $found )
+		return $fontawesome_id;
+
+	$fontawesome_id = get_field( 'fontawesome_id', 'options' );
+
+	if( empty( $fontawesome_id ) )
+		return false;
+
+	wp_cache_set( 'fontawesome_id', $fontawesome_id, 'dshedd' );
+
+	return $fontawesome_id;
+
 }

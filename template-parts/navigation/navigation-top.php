@@ -9,7 +9,9 @@
 	<?php $header_text = get_field( 'header_text', 'options' ); ?>
 	<?php if( !empty( $header_text ) ): ?>
 		<div class="navbar-brand header-text mb-3">
-			<span class="terminal-text"><?php esc_html_e( $header_text ); ?></span>
+			<a href="<?php echo site_url(); ?>" class="terminal-text" title="There's no place like home">
+				<?php esc_html_e( $header_text ); ?>
+			</a>
 		</div>
 	<?php endif; ?>
 

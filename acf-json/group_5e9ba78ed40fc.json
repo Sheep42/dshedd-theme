@@ -3,6 +3,25 @@
     "title": "Global Options",
     "fields": [
         {
+            "key": "field_5ea3931f10bbf",
+            "label": "Fontawesome ID",
+            "name": "fontawesome_id",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5e9ba7c866db4",
             "label": "Background Image",
             "name": "background_image",
@@ -63,5 +82,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1587259376
+    "modified": 1587778351
 }

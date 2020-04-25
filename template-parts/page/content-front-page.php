@@ -30,7 +30,11 @@ set_query_var( 'content_blocks', $content_blocks );
 		?>
 
 		<div class="summary-text">
-			<?php echo apply_filters( 'the_content', $summary ); ?>
+			<div class="mb-4">
+				<?php echo apply_filters( 'the_content', $summary ); ?>
+			</div>
+
+			<?php get_template_part( 'template-parts/navigation/navigation', 'social' ); ?>
 		</div>
 
 	</section><!-- .container -->
