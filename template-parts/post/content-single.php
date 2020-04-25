@@ -5,13 +5,13 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'container mb-5' ); ?>>
+	<header class="entry-header mb-5">
+		
 		<h1 class="entry-title"><?php esc_html_e( get_the_title() ); ?></h1>
 		
-		<div class="entry-meta">
-			<?php esc_html_e( get_the_date() ); ?>
-		</div><!-- .entry-meta -->
+		<?php get_template_part( 'template-parts/post/part', 'post-meta' ); ?>
+
 	</header><!-- .entry-header -->
 
 	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
@@ -22,19 +22,10 @@
 		</div><!-- .post-thumbnail -->
 	<?php endif; ?>
 
-	<div class="entry-content">
-		<?php
-			the_content();
-
-			// wp_link_pages( array(
-			// 	'before'      => '<div class="page-links">' . __( 'Pages:', 'dshedd' ),
-			// 	'after'       => '</div>',
-			// 	'link_before' => '<span class="page-number">',
-			// 	'link_after'  => '</span>',
-			// ) );
-		
-			comments_template();
-		?>
+	<div class="entry-content mb-5">
+		<?php the_content(); ?>
 	</div><!-- .entry-content -->
+
+	<?php comments_template(); ?>
 
 </article><!-- #post-## -->

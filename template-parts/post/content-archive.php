@@ -7,14 +7,14 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('mb-5 pb-5 border-bottom border-light container'); ?>>
 
-	<header class="entry-header">
+	<header class="entry-header mb-3">
+		
 		<h2 class="entry-title">
-			<a href="<?php esc_url( get_permalink() ); ?>" rel="bookmark"><?php esc_html_e( get_the_title() ); ?></a>
+			<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php esc_html_e( get_the_title() ); ?></a>
 		</h2>
 		
-		<div class="entry-meta">
-			<?php esc_html_e( get_the_date() ); ?>
-		</div><!-- .entry-meta -->
+		<?php get_template_part( 'template-parts/post/part', 'post-meta' ); ?>
+
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

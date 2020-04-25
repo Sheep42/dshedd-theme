@@ -1,12 +1,15 @@
 <?php
 
-get_header(); ?>
+	get_header(); 
+
+	$the_term = get_queried_object();
+?>
 
 <div class="wrap">
 
 	<?php if ( have_posts() ) : ?>
-		<header class="page-header">
-			<h1 class="page-title"><?php esc_html_e( get_the_archive_title() ); ?></h1>
+		<header class="page-header container mb-5">
+			<h1 class="page-title"><?php esc_html_e( $the_term->name ); ?></h1>
 		</header><!-- .page-header -->
 	<?php endif; ?>
 
