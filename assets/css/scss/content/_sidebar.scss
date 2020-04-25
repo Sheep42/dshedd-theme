@@ -1,0 +1,44 @@
+
+#sidebar {
+
+	#categories {	
+	
+		.category-link {
+
+			position: relative;
+			
+			&:after {
+				
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				// right: 0;
+				// margin: 0 auto;
+				height: 1px;
+				width: 75%;
+
+				border-bottom: 1px solid;
+				border-color: rgba(255,255,255,0.3) !important;
+
+			}
+
+			&:last-child {
+
+				margin-bottom: 0 !important;
+				padding-bottom: 0 !important;
+
+				&:after {
+
+					border-bottom: none !important;
+
+				}
+
+			}
+
+		}
+
+	}
+
+}

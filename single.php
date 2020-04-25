@@ -15,18 +15,12 @@ get_header(); ?>
 
 				get_template_part( 'template-parts/' . get_post_type() . '/content', 'single' );
 
-				// the_post_navigation( array(
-				// 	'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', 'dshedd' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Previous', 'dshedd' ) . '</span>%title</span>',
-				// 	'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', 'dshedd' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'dshedd' ) . '</span> <span class="nav-title">%title</span>',
-				// ) );
-
 			endwhile; // End of the loop.
 			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	
-	<?php get_sidebar(); ?>
 </div><!-- .wrap -->
 
 <?php get_footer();

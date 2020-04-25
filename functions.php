@@ -263,7 +263,7 @@ function dshedd_excerpt_more( $link ) {
 		sprintf( __( 'Read More &raquo;<span class="screen-reader-text"> "%s"</span>', 'dshedd' ), get_the_title( get_the_ID() ) )
 	);
 
-	return ' &hellip; ' . $link;
+	return '&hellip; ' . $link;
 }
 add_filter( 'excerpt_more', 'dshedd_excerpt_more' );
 
