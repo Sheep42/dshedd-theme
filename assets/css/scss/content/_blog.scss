@@ -3,10 +3,16 @@ body.archive {
 
 	#page {
 
-		article:last-child {
+		article {
 
-			padding-bottom: 0 !important;
-			border-bottom: none !important;
+			border-color: rgba( 255, 255, 255, 0.4 ) !important;
+
+			&:last-child {
+
+				padding-bottom: 0 !important;
+				border-bottom: none !important;
+
+			}
 
 		}
 

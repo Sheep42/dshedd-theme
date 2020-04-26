@@ -32,17 +32,15 @@
 
 			&.current-menu-item .nav-link {
 				color: $active-link-color;
+				font-weight: 700;
 			}
 
 			.nav-link {
 
 				color: $link-color;
 
-				transition: all 0.3s;
-
 				&:hover {
 					color: $active-link-color;
-					transition: all 0.3s;
 				}
 
 			}
@@ -116,6 +114,41 @@
 			padding: 0 !important;
 
 		}
+	}
+
+}
+
+.pagination-wrapper {
+
+	margin: 0 auto;
+	width: max-content;
+
+	.pagination {
+	
+		li.page-item {
+
+			> .page-link {
+			    background-color: $color-light-gray;
+			    border: solid 1px $color-gray !important;
+
+			    color: $color-gray;
+				
+				&:focus,
+				&:hover, {
+					background-color: $color-gray;
+					color: $color-white;
+				}
+			}
+
+			&.active > .page-link {
+
+				color: white;
+			    background-color: $color-dark-gray !important;
+
+			}
+
+		}
+
 	}
 
 }

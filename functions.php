@@ -71,7 +71,7 @@ function dshedd_setup() {
 
 	dshedd_front_page_template( 'front-page.php' );
 
-	dshedd_register_post_type( 'Project', 'Projects', 'project', 5, 'projects' );
+	dshedd_register_post_type( 'Project', 'Projects', 'project', 'projects', array( 'supports' => array( 'title', 'thumbnail' ) ) );
 
 }
 add_action( 'after_setup_theme', 'dshedd_setup' );
@@ -85,29 +85,21 @@ add_action( 'after_setup_theme', 'dshedd_setup' );
  * @param 	string 	$singular 			The singular display name for the post type
  * @param 	string 	$plural 			The plural display name for the post type
  * @param   string 	$slug 	 			The post type slug
- * @param   int 	$menu_position 	 	The menu position for the post type - defaults to 5
  * @param   string 	$rewrite 	 		Override the archive slug for this post type - defaults to $slug
- * @param   bool 	$archive 	 		True / False - Create an archive for this post type
- * @param   bool 	$hierarchical 		True / False - Is this post type hierarchical? (Does it have parent / child relationships)
- * @param 	array 	$supports 			The supports array for this post type - See codex for details
+ * @param   bool 	$args 	 			Additonal register_post_type args
  */
 function dshedd_register_post_type( 
 	$singular, 
 	$plural, 
-	$slug, 
-	$menu_position = 5, 
-	$rewrite = '', 
-	$archive = true, 
-	$hierarchical = true, 
-	$supports = array( 'title', 'editor', 'thumbnail' ) 
+	$slug,
+	$rewrite = '',
+	$args = array() 
 ) {
 
 	// Bail if missing any of the 3 absolute requirements
 	if( empty( $singular ) || empty( $plural ) || empty( $slug ) ) {
 		return;
 	}
-
-	$rewrite = empty( $rewrite ) ? $slug : $rewrite;
 
 	$labels = array(
         'name'                  => _x( $plural, '', 'dshedd' ),
@@ -136,20 +128,22 @@ function dshedd_register_post_type(
         'items_list'            => _x( $plural . ' list', '', 'dshedd' ),
     );
  
-    $args = array(
+    $args = array_merge( array(
         'labels'             => $labels,
         'public'             => true,
         'publicly_queryable' => true,
         'show_ui'            => true,
         'show_in_menu'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => ( $rewrite ) ),
         'capability_type'    => 'post',
-        'has_archive'        => $archive,
-        'hierarchical'       => $hierarchical,
-        'menu_position'      => $menu_position,
-        'supports'           => $supports,
-    );
+        'has_archive'        => true,
+		'hierarchical' 		 => true, 
+        'menu_position'      => 5,
+        'supports' => array( 'title', 'editor', 'thumbnail' )
+    ), $args );
+
+    if( !empty( $rewrite ) )
+    	$args['rewrite'] = array( 'slug' => ( $rewrite ) );
  
     register_post_type( $slug, $args );
 }
@@ -244,6 +238,59 @@ function dshedd_add_menu_link_class( $atts, $item, $args ) {
 
 }
 add_filter( 'nav_menu_link_attributes', 'dshedd_add_menu_link_class', 1, 3 );
+
+function dshedd_bootstrap_pagination( $args = array(), $echo = true ) {
+
+	global $wp_query;
+
+	if( empty( $wp_query ) )
+		return;
+
+	$args = array_merge(
+
+		array(
+			'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+			'format'       => '?paged=%#%',
+			'current'      => max( 1, get_query_var( 'paged' ) ),
+			'total'        => $wp_query->max_num_pages,
+			'type'         => 'array',
+			'show_all'     => false,
+			'end_size'     => 3,
+			'mid_size'     => 1,
+			'prev_next'    => true,
+			'prev_text'    => __( '« Prev' ),
+			'next_text'    => __( 'Next »' ),
+			'add_args'     => false,
+			'add_fragment' => ''
+		),
+		$args
+
+	);
+
+	$pages = paginate_links( $args );
+
+	if ( is_array( $pages ) ) {
+
+		$pagination = '<nav class="pagination-wrapper"><ul class="pagination">';
+
+		foreach( $pages as $page ) {
+            
+            $pagination .= '<li class="page-item' . (strpos($page, 'current') !== false ? ' active' : '') . '"> ' . str_replace('page-numbers', 'page-link', $page) . '</li>';
+
+        }
+
+		$pagination .= '</ul></nav>';
+
+		if ( $echo ) {
+			echo $pagination;
+		} else {
+			return $pagination;
+		}
+
+	}
+
+	return null;
+}
 
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and

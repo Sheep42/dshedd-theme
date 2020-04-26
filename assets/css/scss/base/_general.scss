@@ -47,13 +47,22 @@ a {
 	color: $link-color;
 	text-decoration: none;
 
+	transition: all 0.3s;
+
 	&:focus,
 	&:hover,
 	&:active,
 	&.active {
 		color: $active-link-color;
 		text-decoration: none;
+
+		transition: all 0.3s;
 	}
+
+	&.active {
+		font-weight: 700;
+	}
+
 }
 ol {
 	li {
