@@ -105,7 +105,7 @@ if ( post_password_required() ) {
 									'<div class="col"><label for="comment_email" class="screen-reader-text">Email Address</label><input type="email" placeholder="Email Address*" name="email" class="form-control" /></div>',
 								'</div>',
 							),
-							'comment_field' => '<label for="comment_text" class="screen-reader-text">Your Comment</label><textarea id="comment_text" name="comment" placeholder="' . $funny_comments[$element] . '" class="form-control mb-4" rows="5"></textarea>',
+							'comment_field' => '<label for="comment_text" class="screen-reader-text">Your Comment</label><textarea id="comment_text" name="comment" placeholder="' . esc_attr( $funny_comments[$element] ) . '" class="form-control mb-4" rows="5"></textarea>',
 							'submit_button' => '<input name="%1$s" type="submit" id="%2$s" class="%3$s btn btn-primary float-right" value="%4$s" />',
 							'title_reply_before' => '<h3 id="reply-title" class="comment-reply-title">',
 							'title_reply_after'  => '</h3>',
