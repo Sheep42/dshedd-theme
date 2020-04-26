@@ -72,9 +72,38 @@ function dshedd_setup() {
 	dshedd_front_page_template( 'front-page.php' );
 
 	dshedd_register_post_type( 'Project', 'Projects', 'project', 'projects', array( 'supports' => array( 'title', 'thumbnail' ) ) );
+	dshedd_register_project_categories();
 
 }
 add_action( 'after_setup_theme', 'dshedd_setup' );
+
+function dshedd_register_project_categories() {
+
+	register_taxonomy( 'project-category', 'project', array(
+
+		'labels'             => array(
+				'name'              => 'Project Categories',
+				'singular_name'     => 'Project Category',
+				'search_items'      => 'Search Project Categories',
+				'all_items'         => 'All Project Categories',
+				'parent_item'       => 'Parent Project Category',
+				'parent_item_colon' => 'Parent Project Category:',
+				'edit_item'         => 'Edit Project Category',
+				'update_item'       => 'Update Project Category',
+				'add_new_item'      => 'Add New Project Category',
+				'new_item_name'     => 'New Project Category Name',
+				'menu_name'         => 'Project Categories',
+			),
+			'hierarchical'       => true,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'show_admin_column'  => true
+
+	));
+
+}
 
 /**
  *  Abstraction for SIMPLE post type registration, to override arguments
