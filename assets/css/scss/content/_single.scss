@@ -1,1 +1,25 @@
 // General single styles
+body.single {
+
+	#comments {
+
+		.comments-list {
+
+			.comment {
+
+				padding-bottom: 20px;
+
+				ul.children {
+
+					padding: 0 20px;
+					margin: 0 !important;
+					
+				}
+
+			}
+
+		}
+
+	}
+
+}

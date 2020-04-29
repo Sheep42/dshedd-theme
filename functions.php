@@ -515,3 +515,42 @@ function _dshedd_get_fontawesome_id() {
 	return $fontawesome_id;
 
 }
+
+function dshedd_bootstrap_comments( $comment, $args, $depth ) {
+	$unapproved_id = !empty( $_GET['unapproved'] ) ? intval( $_GET['unapproved'] ) : '';
+	?>
+	<?php if ( $comment->comment_approved == '1' || ( !empty( $unapproved_id ) && intval( $comment->comment_ID ) === $unapproved_id ) ): ?>
+		
+		<li class="comment card bg-dark">
+
+			<div class="card-header">
+				<div class="float-left mr-4"><?php echo get_avatar( $comment ); ?></div>
+				<h4><?php comment_author_link(); ?></h4>
+				<time><a href="#comment-<?php comment_ID(); ?>" pubdate><?php comment_date(); ?> at <?php comment_time(); ?></a></time>
+			</div>
+
+			<div class="card-body">
+				<?php comment_text(); ?>
+
+				<?php if( $comment->comment_approved !== '1' ): ?>
+					<div class="mb-4">
+						<em>Your comment has not yet been approved by a moderator. This is a preview that only you are able to view.</em>
+					</div>
+				<?php endif; ?>
+
+				<div>
+				<?php 
+					$comment_reply_link = get_comment_reply_link( array( 
+						'depth' => 1,
+						'max_depth' => 3,
+					) ); 
+
+					$comment_reply_link = str_replace( 'comment-reply-link', 'comment-reply-link btn btn-primary', $comment_reply_link );
+
+					echo $comment_reply_link;
+				?>
+				</div>
+			</div>
+
+	<?php endif;
+}

@@ -47,8 +47,10 @@ if ( post_password_required() ) {
 		<div class="comments-list">
 
 			<?php
-				wp_list_comments();
-
+				wp_list_comments( array(
+					'callback' => 'dshedd_bootstrap_comments'
+				));
+				
 				$comment_pagination = paginate_comments_links(
 					array(
 						'echo'      => false,
