@@ -1,25 +1,106 @@
 // _form.scss
 
-a.button,
-button,
-button[type="button"],
-button[type="submit"],
-input[type="submit"],
-input[type="button"] {
-	-webkit-appearance: none;
-	&:hover,
-	&:active {
-		
-	}
-}
-
+input[type="text"],
+input[type="email"],
+input[type="tel"],
 textarea {
-	-webkit-appearance: none;
-	&:focus, &:active {
 
+	&::placeholder{
+		color: $color-placeholder-text !important;
+		font-style: italic;
+	}
+
+}
+
+/** Gravity Forms to Bootstrap */
+.gform_wrapper form {
+	margin-bottom: 0;
+}
+
+.gform_wrapper ul {
+	@extend .list-unstyled;
+}
+
+.gform_wrapper li {
+	@extend .form-group;
+	@extend .mb-4;
+
+	&.hidden_label {
+
+		label {
+			display: none;
+		}
+
+	}
+
+	.gfield_description {
+
+		font-size: 1rem;
+		font-style: italic;
+		opacity: 0.8;
+
+	}
+
+	.gf_name_has_2 {
+		@extend .row;
+
+		br { 
+			display: none;
+		}
+
+		p {
+			@extend .col-6;
+		}  
+
+	}
+
+}
+
+.gform_wrapper .gfield_required {
+	padding-left: 1px;
+	color: $danger;
+}
+
+.gform_wrapper input[type="email"],
+.gform_wrapper input[type="date"],
+.gform_wrapper input[type="datetime"],
+.gform_wrapper input[type="datetime-local"],
+.gform_wrapper input[type="month"],
+.gform_wrapper input[type="number"],
+.gform_wrapper input[type="password"],
+.gform_wrapper input[type="search"],
+.gform_wrapper input[type="tel"],
+.gform_wrapper input[type="text"],
+.gform_wrapper input[type="time"],
+.gform_wrapper input[type="week"],
+.gform_wrapper input[type="url"],
+.gform_wrapper select,
+.gform_wrapper textarea {
+	@extend .form-control;
+}
+
+.gform_wrapper .button {
+	@extend .btn;
+	@extend .btn-primary;
+}
+
+.gform_wrapper .gfield_error {
+	.gfield_label {
+		@extend .alert-danger;
+	}
+
+	input,
+	select,
+	textarea {
+		@extend .alert-danger;
 	}
 }
 
-input[type="text"] {
+.validation_error {
+	@extend .alert;
+	@extend .alert-danger;
+}
 
+.validation_message {
+	display: none;
 }
