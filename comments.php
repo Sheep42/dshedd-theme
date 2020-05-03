@@ -84,10 +84,14 @@ if ( post_password_required() ) {
 			<?php 
  
 				$funny_comments = array(
-					'A\'int no planet X coming cuz a\'int no space cuz a\'int no globe earth',
+					'Ain\'t no planet X coming cuz ain\'t no space cuz ain\'t no globe earth',
 					'I believe in swordfish',
-					'Who would win in a fight, Vim or Emacs?',
+					'Vim or Emacs?',
+					'Spaces or Tabs?',
+					'Somebody is wrong on the internet!',
 					'This comment has been closed as off-topic',
+					'Zalgo is upon us',
+					'ALL GLORY TO THE HYPNOTOAD',
 				);
 
 				$max_elem = count( $funny_comments ) - 1;
