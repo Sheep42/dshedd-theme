@@ -74,6 +74,32 @@ function dshedd_setup() {
 	dshedd_register_post_type( 'Project', 'Projects', 'project', 'projects', array( 'supports' => array( 'title', 'thumbnail' ) ) );
 	dshedd_register_project_categories();
 
+	function dshedd_sender_email( $email_address ) {
+
+		$custom_site_email = get_field( 'custom_site_email', 'options' );
+
+		if( !empty( $custom_site_email ) && false !== is_email( $email ) ) {
+			$email_address = $custom_site_email;
+		}
+
+	    return $email_address;
+	}
+	 
+	function dshedd_sender_name( $sender ) {
+
+		$custom_site_sender = get_field( 'custom_site_sender', 'options' );
+
+		if( !empty( $custom_site_sender ) ) {
+			$sender = $custom_site_sender;
+		}
+
+	    return $sender;
+
+	}
+
+	add_filter( 'wp_mail_from', 'dshedd_sender_email' );
+	add_filter( 'wp_mail_from_name', 'dshedd_sender_name' );
+
 }
 add_action( 'after_setup_theme', 'dshedd_setup' );
 
