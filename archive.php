@@ -9,6 +9,8 @@
 	} elseif( is_post_type_archive() ) {
 		$labels = get_post_type_labels( $queried_object );
 		$page_title = $labels->name;
+	} elseif( is_taxonomy( 'project-category' ) ) {
+		$page_title = 'Project Type: ' . $queried_object->name;
 	}
 ?>
 
