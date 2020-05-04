@@ -49,7 +49,7 @@ function dshedd_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// Custom image sizes
-	add_image_size( 'dshedd-featured-image', 2000, 1200, true );
+	add_image_size( 'dshedd-featured-image', 1128, 1200, true );
 	add_image_size( 'dshedd-thumbnail-avatar', 100, 100, true );
 	add_image_size( 'dshedd-thumbnail-headshot', 250, 250, true );
 
@@ -71,7 +71,7 @@ function dshedd_setup() {
 
 	dshedd_front_page_template( 'front-page.php' );
 
-	dshedd_register_post_type( 'Project', 'Projects', 'project', 'projects', array( 'supports' => array( 'title', 'thumbnail' ) ) );
+	dshedd_register_post_type( 'Project', 'Projects', 'project', 'projects', array( 'supports' => array( 'title', 'thumbnail', 'excerpt' ) ) );
 	dshedd_register_project_categories();
 
 	function dshedd_sender_email( $email_address ) {

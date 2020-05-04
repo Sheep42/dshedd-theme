@@ -13,7 +13,7 @@
 			?>
 
 			<?php if( $counter % 4 == 0 || $counter == 1 ): ?>
-				<div class="row mb-0 mb-md-4">
+				<div class="row mb-0 mb-lg-4">
 			<?php endif; ?>
 
 				<?php get_template_part( 'template-parts/' . get_post_type() . '/content', 'archive' ); ?>

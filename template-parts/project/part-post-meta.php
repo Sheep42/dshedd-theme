@@ -1,29 +1,15 @@
-<div class="entry-meta">
+<div class="project-categories">
 
-	<?php 
-		$categories = wp_get_post_terms( array( 
-			'taxonomy' => 'project-category' 
-		));
-	?>
+	<?php $project_categories = get_the_terms( $post, 'project-category' ); ?>
 
-	<?php if( !empty( $categories ) ): ?>
+	<?php if( !empty( $project_categories ) ): ?>
 
-		<?php
-			$counter = 1; 
-			$category_count = count( $categories ); 
-		?>
-
-		<span class="mr-2 m-2">&bull;</span>
-
-		<?php foreach( $categories as $category ): ?>
+		<?php foreach( $project_categories as $category ): ?>
 			
-			<span class="category-link">
-				<a href="<?php echo get_category_link( $category ); ?>">
-					<?php esc_html_e( $category->name ); ?>
-				</a><?php echo ( $counter < $category_count ) ? ', ' : ''; ?>
-			</span>
+			<a href="<?php echo get_category_link( $category ); ?>" class="badge badge-pill badge-secondary">
+				<?php esc_html_e( $category->name ); ?>
+			</a>
 
-			<?php $counter++; ?>
 		<?php endforeach; ?>
 	<?php endif; ?>
 </div><!-- .entry-meta -->

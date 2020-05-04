@@ -5,27 +5,32 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'container mb-5' ); ?>>
-	<header class="entry-header mb-5">
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'card bg-dark mb-5' ); ?>>
+	<header class="entry-header card-header mb-5">
 		
 		<h1 class="entry-title"><?php esc_html_e( get_the_title() ); ?></h1>
 		
-		<?php get_template_part( 'template-parts/post/part', 'post-meta' ); ?>
+		<?php get_template_part( 'template-parts/project/part', 'post-meta' ); ?>
 
 	</header><!-- .entry-header -->
 
-	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
-		<div class="post-thumbnail">
-			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'dshedd-featured-image' ); ?>
-			</a>
-		</div><!-- .post-thumbnail -->
-	<?php endif; ?>
+	<div class="entry-content card-body mb-5">
+		<?php if ( '' !== get_the_post_thumbnail() ) : ?>
+			<div class="post-thumbnail text-center mb-4">
+				<?php 
+					the_post_thumbnail( 'dshedd-featured-image', array( 
+						'class' => 'img-fluid',
+						'alt' => esc_attr( get_the_title() ) 
+					)); 
+				?>
+			</div><!-- .post-thumbnail -->
+		<?php endif; ?>
 
-	<div class="entry-content mb-5">
-		<?php the_content(); ?>
+		<?php
+			$content_blocks = get_field( 'content_blocks' );
+			set_query_var( 'content_blocks', $content_blocks ); 
+			get_template_part( 'template-parts/content', 'blocks' ); 
+		?>
 	</div><!-- .entry-content -->
-
-	<?php comments_template(); ?>
 
 </article><!-- #post-## -->

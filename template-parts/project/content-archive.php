@@ -5,7 +5,7 @@
 
 ?>
 
-<article id="project-<?php the_ID(); ?>" <?php post_class('col-md-4 mb-4 mb-md-0'); ?>>
+<article id="project-<?php the_ID(); ?>" <?php post_class('col-lg-4 mb-4 mb-lg-0'); ?>>
 
 	<div class="project-card card bg-dark">
 		<header class="card-header">
@@ -21,6 +21,10 @@
 		<div class="card-body">
 			<?php the_excerpt(); ?>
 		</div><!-- .entry-summary -->
+
+		<div class="card-footer text-center">
+			<a href="<?php the_permalink(); ?>" class="btn btn-primary">Project Details</a>
+		</div>
 	</div>
 
 </article><!-- #post-## -->

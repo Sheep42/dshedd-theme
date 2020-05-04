@@ -7,6 +7,10 @@
 if ( post_password_required() ) {
 	return;
 }
+
+if( !comments_open() ) {
+	return;
+} 
 ?>
 
 <h2 class="mb-4">Comments</h2>
@@ -97,28 +101,25 @@ if ( post_password_required() ) {
 				$max_elem = count( $funny_comments ) - 1;
  				$element = rand( 0, $max_elem );
 
-				if ( comments_open() || pings_open() ) {
-
-					if ( $comments ) {
-						echo '<hr class="separator" />';
-					}
-
-					comment_form(
-						array(
-							'fields' => array(
-								'<div class="form-group form-row">',
-									'<div class="col"><label for="comment_author" class="screen-reader-text">Your Name</label><input id="comment-author" type="text" placeholder="Your Name*" name="author" class="form-control" /></div>',
-									'<div class="col"><label for="comment_email" class="screen-reader-text">Email Address</label><input type="email" placeholder="Email Address*" name="email" class="form-control" /></div>',
-								'</div>',
-							),
-							'comment_field' => '<label for="comment_text" class="screen-reader-text">Your Comment</label><textarea id="comment_text" name="comment" placeholder="' . esc_attr( $funny_comments[$element] ) . '" class="form-control mb-4" rows="5"></textarea>',
-							'submit_button' => '<input name="%1$s" type="submit" id="%2$s" class="%3$s btn btn-primary float-right" value="%4$s" />',
-							'title_reply_before' => '<h3 id="reply-title" class="comment-reply-title">',
-							'title_reply_after'  => '</h3>',
-						)
-					);
-
+				if ( $comments ) {
+					echo '<hr class="separator" />';
 				}
+
+				comment_form(
+					array(
+						'fields' => array(
+							'<div class="form-group form-row">',
+								'<div class="col"><label for="comment_author" class="screen-reader-text">Your Name</label><input id="comment-author" type="text" placeholder="Your Name*" name="author" class="form-control" /></div>',
+								'<div class="col"><label for="comment_email" class="screen-reader-text">Email Address</label><input type="email" placeholder="Email Address*" name="email" class="form-control" /></div>',
+							'</div>',
+						),
+						'comment_field' => '<label for="comment_text" class="screen-reader-text">Your Comment</label><textarea id="comment_text" name="comment" placeholder="' . esc_attr( $funny_comments[$element] ) . '" class="form-control mb-4" rows="5"></textarea>',
+						'submit_button' => '<input name="%1$s" type="submit" id="%2$s" class="%3$s btn btn-primary float-right" value="%4$s" />',
+						'title_reply_before' => '<h3 id="reply-title" class="comment-reply-title">',
+						'title_reply_after'  => '</h3>',
+					)
+				);
+
 			?>
 		</div><!-- .new-comment-form -->
 

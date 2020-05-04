@@ -5,7 +5,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'container mb-5' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-5' ); ?>>
 	<header class="entry-header mb-5">
 		
 		<h1 class="entry-title"><?php esc_html_e( get_the_title() ); ?></h1>
