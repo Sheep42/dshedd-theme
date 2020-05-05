@@ -17,6 +17,9 @@
 		return /iPad|iPhone|iPod/.test(navigator.userAgent) && ! window.MSStream;
 	}
 
+	// init highlight.js
+	hljs.initHighlightingOnLoad();
+
 	// DOM ready.
 	// $( document ).ready( function() { });
 

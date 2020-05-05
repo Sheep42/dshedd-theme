@@ -100,6 +100,14 @@ table {
 	}
 }
 
+pre {
+
+	code {
+		@extend .p-3;
+	}
+	
+}
+
 .entry-meta {
 
 	font-size: 14px;
