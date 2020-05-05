@@ -14,11 +14,14 @@
 
 	</header><!-- .entry-header -->
 
-	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
-		<div class="post-thumbnail">
-			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'dshedd-featured-image' ); ?>
-			</a>
+	<?php if ( '' !== get_the_post_thumbnail() ) : ?>
+		<div class="post-thumbnail text-center mb-4">
+			<?php 
+				the_post_thumbnail( 'dshedd-featured-image', array( 
+					'class' => 'img-fluid',
+					'alt' => esc_attr( get_the_title() ) 
+				)); 
+			?>
 		</div><!-- .post-thumbnail -->
 	<?php endif; ?>
 
