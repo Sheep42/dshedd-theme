@@ -176,7 +176,7 @@ function admin_js() {
 }
 
 function theme_js() { 
-    return build_scripts( ['./assets/js/src/theme/**/*.js', './assets/js/src/vendor/**/*.js'], 'main', 'theme' );
+    return build_scripts( [ './assets/js/src/vendor/**/*.js', './assets/js/src/theme/**/*.js' ], 'main', 'theme' );
 }
 
 function watch() {
