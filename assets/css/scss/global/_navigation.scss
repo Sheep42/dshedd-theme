@@ -7,9 +7,13 @@
 
 		.terminal-text {
 			
-			line-height: 57px;
-			font-size: 48px;
+			line-height: 3rem;
+			font-size: 2rem;
 			color: $color-white;
+
+			@media (min-width: 768px) {  
+ 				font-size: 3rem;
+			}
 
 			&::after {
 
