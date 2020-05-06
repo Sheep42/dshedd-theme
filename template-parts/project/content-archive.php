@@ -9,11 +9,8 @@
 
 	<div class="project-card card bg-dark">
 		<?php 
-			// $style_attr = '';
-
 			if( has_post_thumbnail() ) {
-				$featured_img_url = wp_get_attachment_url( get_post_thumbnail_id( $post_id ) ); 
-				// $style_attr = sprintf( "background-image: url('%s');", $featured_img_url );
+				$featured_img_url = wp_get_attachment_url( get_post_thumbnail_id() ); 
 			}
 		?>
 
