@@ -9,7 +9,7 @@ set_query_var( 'content_blocks', $content_blocks );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('container'); ?> >
 
-	<section class="entry-summary mb-5">
+	<section class="entry-summary text-center text-lg-left mb-5">
 
 		<?php 
 			$photo = get_field( 'photo' );
