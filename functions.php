@@ -78,7 +78,7 @@ function dshedd_setup() {
 
 		$custom_site_email = get_field( 'custom_site_email', 'options' );
 
-		if( !empty( $custom_site_email ) && false !== is_email( $email ) ) {
+		if( !empty( $custom_site_email ) && false !== is_email( $custom_site_email ) ) {
 			$email_address = $custom_site_email;
 		}
 
@@ -579,4 +579,22 @@ function dshedd_bootstrap_comments( $comment, $args, $depth ) {
 			</div>
 
 	<?php endif;
+}
+
+function dshedd_google_analytics() {
+
+	$ga_id = get_field( 'google_analytics_id', 'options' );
+
+	if( !empty( $ga_id ) ) {
+
+		echo "<script async src=\"//www.googletagmanager.com/gtag/js?id=$ga_id\"></script>";
+		echo "<script>";
+			echo "window.dataLayer = window.dataLayer || [];";
+			echo "function gtag(){dataLayer.push(arguments);}";
+			echo "gtag('js', new Date());";
+			echo "gtag('config', '$ga_id');";
+		echo "</script>";
+
+	}
+
 }

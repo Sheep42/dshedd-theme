@@ -22,6 +22,25 @@
             "maxlength": ""
         },
         {
+            "key": "field_5eb330182b585",
+            "label": "Google Analytics ID",
+            "name": "google_analytics_id",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5e9ba7c866db4",
             "label": "Background Image",
             "name": "background_image",
@@ -119,5 +138,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1588522927
+    "modified": 1588801591
 }

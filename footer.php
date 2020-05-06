@@ -17,6 +17,11 @@
 		</div><!-- .wrap -->
 	</footer><!-- #colophon -->
 
+<?php 
+	dshedd_load_fontawesome();
+	dshedd_google_analytics(); 
+?>
+
 <?php wp_footer(); ?>
 
 </body>
