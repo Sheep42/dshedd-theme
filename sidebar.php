@@ -6,7 +6,7 @@
 $queried_obj = get_queried_object();
 ?>
 
-<aside id="sidebar" class="widget-area col-lg-3 order-1 mb-4 mb-lg-0" role="complementary" aria-label="<?php esc_attr_e( 'Blog Sidebar', 'dshedd' ); ?>">
+<aside id="sidebar" class="widget-area col-lg-3 order-lg-1 mb-4 mb-lg-0" role="complementary" aria-label="<?php esc_attr_e( 'Blog Sidebar', 'dshedd' ); ?>">
 	
 	<?php 
 		$all_categories = get_categories( array(

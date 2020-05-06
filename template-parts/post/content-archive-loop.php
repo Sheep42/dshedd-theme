@@ -1,8 +1,8 @@
-<main id="main" class="site-main col-lg-9 order-2" role="main">
+<main id="main" class="site-main col-lg-9 order-lg-2" role="main">
 
 <?php if ( have_posts() ) : ?>
 
-	<section class="posts">
+	<section class="posts container">
 		<?php
 		/* Start the Loop */
 		while ( have_posts() ) : the_post();

@@ -2,7 +2,7 @@
 
 <?php if ( have_posts() ) : ?>
 
-	<section class="posts">
+	<section class="posts container">
 		<?php
 		/* Start the Loop */
 
