@@ -5,19 +5,17 @@ get_header(); ?>
 <div class="wrap">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
-			<section class="error-404 not-found">
+			
+			<section class="error-404 not-found container">
 				<header class="page-header">
 					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'dshedd' ); ?></h1>
 				</header><!-- .page-header -->
 				
 				<div class="page-content">
 					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'dshedd' ); ?></p>
-
-					<?php get_search_form(); ?>
-
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
 </div><!-- .wrap -->
