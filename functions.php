@@ -583,18 +583,39 @@ function dshedd_bootstrap_comments( $comment, $args, $depth ) {
 
 function dshedd_google_analytics() {
 
-	$ga_id = get_field( 'google_analytics_id', 'options' );
+	$ga_id = _dshedd_get_ga_id();
 
 	if( !empty( $ga_id ) ) {
 
-		echo "<script async src=\"//www.googletagmanager.com/gtag/js?id=$ga_id\"></script>";
-		echo "<script>";
-			echo "window.dataLayer = window.dataLayer || [];";
-			echo "function gtag(){dataLayer.push(arguments);}";
-			echo "gtag('js', new Date());";
-			echo "gtag('config', '$ga_id');";
-		echo "</script>";
+		printf( "<script async src=\"//www.googletagmanager.com/gtag/js?id=%s\"></script>", urlencode( trim( $ga_id ) ) );
+
+		printf( "<script>"
+					. "window.dataLayer = window.dataLayer || [];"
+					. "function gtag(){dataLayer.push(arguments);}"
+					. "gtag('js', new Date());"
+					. "gtag('config', '%s');"
+				. "</script>", 
+				esc_js( trim( $ga_id ) ) 
+		);
 
 	}
+
+}
+
+function _dshedd_get_ga_id() {
+
+	$google_analytics_id = wp_cache_get( 'google_analytics_id', 'dshedd', false, $found );
+
+	if( true === $found )
+		return $google_analytics_id;
+
+	$google_analytics_id = get_field( 'google_analytics_id', 'options' );
+
+	if( empty( $google_analytics_id ) )
+		return false;
+
+	wp_cache_set( 'google_analytics_id', $google_analytics_id, 'dshedd' );
+
+	return $google_analytics_id;
 
 }
