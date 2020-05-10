@@ -12,7 +12,7 @@ get_header(); ?>
 				</header><!-- .page-header -->
 				
 				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'dshedd' ); ?></p>
+					<p><?php _e( 'It looks like nothing was found at this location.', 'dshedd' ); ?></p>
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 
