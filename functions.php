@@ -251,7 +251,7 @@ function dshedd_resource_hints( $urls, $relation_type ) {
 		);
 
 		$urls[] = array(
-			'href' => 'https://www.google-analytics.com',
+			'href' => 'https://www.googletagmanager.com',
 			'crossorigin'
 		);
 		
