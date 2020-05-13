@@ -249,6 +249,12 @@ function dshedd_resource_hints( $urls, $relation_type ) {
 			'href' => 'https://kit-free.fontawesome.com',
 			'crossorigin'
 		);
+
+		$urls[] = array(
+			'href' => 'https://www.google-analytics.com',
+			'crossorigin'
+		);
+		
 	}
 
 	return $urls;
