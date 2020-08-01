@@ -19,7 +19,10 @@
 
 <?php 
 	dshedd_load_fontawesome();
-	dshedd_google_analytics(); 
+	dshedd_google_analytics();
+
+	if( class_exists( 'DS_SpotifyRecentlyPlayed' ) )
+		ds_spotify_recently_played();
 ?>
 
 <?php wp_footer(); ?>
