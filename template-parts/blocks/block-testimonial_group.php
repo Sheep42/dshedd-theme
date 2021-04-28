@@ -14,11 +14,17 @@
 				<h2><?php esc_html_e( $content_block['section_title'] ); ?></h2>
 			<?php endif; ?>
 
-			<?php echo wp_kses_post( $content_block['section_content'] ); ?>
+			<?php 
+				
+				if( $content_block['section_content'] ) {
+					echo wp_kses_post( $content_block['section_content'] ); 
+				}
+
+			?>
 
 			<?php foreach( $content_block['testimonials'] as $testimonial ): ?>
 
-				<div class="testimonial">
+				<div class="testimonial mt-4">
 
 					<blockquote class="blockquote">
 						<?php echo wp_kses_post( $testimonial['quote'] ); ?>
