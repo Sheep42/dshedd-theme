@@ -8,7 +8,7 @@
 	if( !empty( $content_block ) && !empty( $content_block['testimonials'] ) ):
 		?>
 
-		<div class="testimonials p-5">
+		<div class="testimonials p-md-5">
 
 			<?php if( $content_block['section_title'] ): ?>
 				<h2><?php esc_html_e( $content_block['section_title'] ); ?></h2>
