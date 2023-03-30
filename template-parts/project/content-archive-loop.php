@@ -12,7 +12,7 @@
 		while ( have_posts() ) : the_post();
 			?>
 
-			<?php if( $counter % 4 == 0 || $counter == 1 ): ?>
+			<?php if( $counter % 3 == 1 || $counter == 1 ): ?>
 				<div class="row mb-0 mb-lg-4">
 			<?php endif; ?>
 
