@@ -625,3 +625,9 @@ function _dshedd_get_ga_id() {
 	return $google_analytics_id;
 
 }
+
+function _dshedd_extra_headers( $headers ) {
+    $headers['X-Clacks-Overhead'] = 'GNU Terry Pratchett';
+    return $headers;
+}
+add_filter( 'wp_headers', '_dshedd_extra_headers' );
