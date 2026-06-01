@@ -8,7 +8,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('mb-5 pb-5 border-bottom w-100 row'); ?>>
 
 	<?php if( has_post_thumbnail() ): ?>
-		<div class="col-5">
+		<div class="col-md-5">
 			<a href="<?php the_permalink(); ?>" class="btn-img btn-img-gradient mb-4" title="Read <?php esc_attr_e( get_the_title() ) ?>">
 				<?php
 					the_post_thumbnail( 'dshedd-featured-image', array( 
@@ -21,7 +21,7 @@
 	<?php endif; ?>
 
 	<?php if( has_post_thumbnail() ): ?>
-	<div class="col-7">
+	<div class="col-md-7">
 	<?php endif; ?>
 
 		<header class="entry-header mb-3">

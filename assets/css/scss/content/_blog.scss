@@ -19,3 +19,22 @@ body.archive {
 	}
 
 }
+
+body.single-post {
+
+	.entry-content {
+
+		ul {
+	
+			list-style: circle;
+			margin-left: 1rem;
+	
+			li {
+				margin-bottom: 1.25rem;
+			}
+
+		}
+
+	}
+
+}

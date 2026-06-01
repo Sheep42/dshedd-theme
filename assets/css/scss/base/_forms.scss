@@ -48,11 +48,28 @@ textarea {
 	.gf_name_has_2 {
 		@extend .row;
 
+		margin-left: 0;
+		margin-right: 0;
+
+		span {
+			padding: 0;
+			flex: 1;
+			max-width: none;
+
+			&:not(:last-child) {
+				margin-right: 16px;
+			}
+
+			input {
+				max-width: none;
+			}
+		}
+
 		br { 
 			display: none;
 		}
 
-		p {
+		*, p {
 			@extend .col-6;
 		}  
 
