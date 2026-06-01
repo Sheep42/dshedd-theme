@@ -8,6 +8,6 @@
 	
 	<div class="col-lg-4 mb-2 mb-lg-0">Proudly built with <a href="https://wordpress.org/" target="_blank">WordPress</a></div> 
 	<div class="copyright col-lg-4 mb-2 mb-lg-0"><?php esc_html_e( get_bloginfo( 'name' ) . ' &copy;' . date('Y') ); ?></div>
-	<div class="col-lg-4 mb-2 mb-lg-0">Made with <span aria-hidden="true"><span class="screen-reader-text">heart</span>&hearts;</span> in Lowell, MA</div>
+	<div class="col-lg-4 mb-2 mb-lg-0">Made with <span aria-hidden="true"><span class="screen-reader-text">heart</span>&hearts;</span> in New England</div>
 
 </div><!-- .site-info -->
